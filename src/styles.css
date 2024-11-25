@@ -1,0 +1,27 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Altura mínima igual à altura da tela */
+  }
+  
+  router-outlet {
+    flex: 1; /* Permite que o router-outlet ocupe o espaço necessário */
+    display: block
+  }
+  
+  .page-content {
+    margin-top: 0; /* Caso o header ocupe espaço, evite margem desnecessária */
+    margin-bottom: auto; /* Garante que o espaço abaixo cresça proporcionalmente */
+  }

@@ -1,0 +1,63 @@
+.noticia {
+  display: flex;
+  flex-direction: row; /* Coloca imagem e texto lado a lado */
+  justify-content: center; /* Centraliza horizontalmente todo o conteúdo */
+  align-items: flex-start; /* Alinha o conteúdo na parte superior */
+  margin: 20px auto; /* Centraliza a div inteira horizontalmente */
+  width: 80%; /* Ajuste a largura do container */
+  margin-top: 200px;
+}
+
+.noticia__image {
+  display: flex;
+  width: 500px;
+  height: 500px;
+  background-color: #888;
+  align-items: center;
+  justify-content: center;
+  font-size: 100px;
+  color: white;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.noticia__text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.noticia__headline {
+  align-items: flex-start;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.noticia__subtitle {
+  font-size: 1.25rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.noticia__date {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.noticia__fulltext {
+  text-align: justify;
+  width: 80%; /* largura do texto */
+  margin: 20px auto; /* margem automática nas laterais para centralizar */
+  margin-top: 100px;
+  margin-bottom: 50px;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.noticia__add {
+  position: relative; /* Posiciona dentro do container */
+  left: 150px;
+}

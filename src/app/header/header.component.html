@@ -1,0 +1,70 @@
+<!-- header.component.html -->
+<header class="header">
+    <div class="header__logo-and-socialmedia">
+        <div class="header__logo">
+            <img (click)="navigateTo('', false)" src="assets/images/logo-jj.png" alt="Logo" class="header__logo-image">
+            <img (click)="navigateTo('', false)" src="assets/images/logo-jj-text.png" alt="Logo" class="header__logo-image">
+        </div>
+    </div>
+    
+    <nav class="header__categories">
+        <ul>
+            <li *ngFor="let category of categories" class="header__category">
+                <a (click)="navigateTo(category.route, false)" class="header__category-link">
+                    {{ category.name }}
+                </a>
+            </li>
+        </ul>
+    </nav>
+    
+    <div class="header__date-and-search">
+        <div class="header__datetime">
+            {{ currentDateTime }}
+        </div>
+        <div class="header__search-container">
+            <!-- Caixa de busca -->
+            <input
+                id="search-box"
+                class="header__search"
+                type="text"
+                placeholder="Buscar notícias..."
+                [(ngModel)]="searchQuery"
+                (input)="filterNoticias()"
+            />
+            <!-- Dropdown dinâmico de resultados -->
+            <ul *ngIf="filteredNoticias.length > 0" class="header__dropdown">
+                <li *ngFor="let noticia of filteredNoticias" class="header__dropdown-item" (click)="navigateToNoticia(noticia)">
+                {{ noticia.headline }}
+                </li>
+            </ul>
+            <!-- Ícone de lupa fixado à direita -->
+            <span class="material-icons" (click)="filterNoticias()">search</span>
+            <!-- Ícone Hamburger menu -->
+            <span class="material-icons header__menu-icon" (click)="toggleMenu()">menu</span>
+
+            <nav class="header__hamburger-menu" *ngIf="isMenuOpen">
+                <ul>
+                    <div class="header__social-icons">
+                        <a href="https://www.facebook.com/www.jornaldejundiapeba.com.br" target="_blank" class="fab fa-facebook-f"></a>
+                        <a href="https://www.instagram.com/jornaldejundiapeba/s/" target="_blank" class="fab fa-instagram"></a>
+                        <a href="https://wa.me/11945234323" target="_blank" class="fab fa-whatsapp"></a>
+                        <a href="mailto:contato@jornaldejundiapeba.inf.br" class="fas fa-envelope"></a>
+                    </div>
+                    <hr style="border: 1px solid #434343; margin: 20px 0; width: 100%;">
+                    <li><a (click)="navigateTo('', true)">Início</a></li>
+                    <li><a (click)="navigateTo('noticia-categoria/geral', true)">Geral</a></li>
+                    <li><a (click)="navigateTo('noticia-categoria/politica', true)">Política</a></li>
+                    <li><a (click)="navigateTo('noticia-categoria/policial', true)">Policial</a></li>
+                    <li><a (click)="navigateTo('noticia-categoria/esportes', true)">Esportes</a></li>
+                    <li><a (click)="navigateTo('noticia-categoria/cultura', true)">Cultura</a></li>
+                    <li><a (click)="navigateTo('noticia-categoria/agenda', true)">Agenda</a></li>
+                    <li><a (click)="navigateTo('noticia-categoria/emprego', true)">Emprego</a></li>
+                    <li><a (click)="navigateTo('noticia-categoria/achadosperdidos', true)">Achados e Perdidos</a></li>
+                    <li><a (click)="navigateTo('noticia-categoria/anuncios', true)">Anúncios</a></li>
+                    <li><a (click)="navigateTo('noticia-categoria/reclamacoes', true)">Reclamações</a></li>
+                    <li><a (click)="navigateTo('sobre', true)">Sobre Nós</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

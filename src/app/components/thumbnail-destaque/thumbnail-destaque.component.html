@@ -1,0 +1,10 @@
+<article class="highlight">
+<!-- <img [src]="noticia.image" [alt]="noticia.headline" class="highlight__image" />  -->
+  <span class="highlight__image">I</span>
+  <div class="highlight__content">
+    <h3 class="highlight__headline">{{ noticia.headline }}</h3>
+    <p class="highlight__subtitle">{{ noticia.subtitle }}</p>
+    <p class="highlight__summary">{{ noticia.summary }}</p>
+    <p class="highlight__date">{{ noticia.date | date: 'dd/MM/yyyy' }}</p> <!-- Exibe a data -->
+  </div>
+</article>

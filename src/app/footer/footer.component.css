@@ -1,0 +1,29 @@
+.footer {
+    bottom: 0;
+    display: flex;
+    background-color: black;
+    width: 100%;
+    font-size: 1rem;
+    color: #FFD700; /* Amarelo (usado para o logo) */
+}
+
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.footer__jj,
+.footer__bws {
+    font-weight: bold;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.footer__bws a {
+    text-decoration: none;
+    color: aliceblue
+}

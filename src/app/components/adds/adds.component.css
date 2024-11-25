@@ -1,0 +1,22 @@
+p {
+    margin-top: 300px;
+    background-color: #f5f5f5;
+    width: 100%;
+    justify-content: space-between; /* Ocupa 80% da largura da tela */
+    font-size: 50px;
+    text-align: center;
+    padding: 50px;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    margin-top: 300px;
+    background-color: #fff; /* Cor de fundo branca */
+    border: 2px solid #ddd; /* Borda leve */
+    box-sizing: border-box; /* Inclui padding na largura */
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin-top: 20px; /* Distância do topo */
+    height: 30vh; /* Ocupa 80% da altura da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333; /* Cor do texto */
+}

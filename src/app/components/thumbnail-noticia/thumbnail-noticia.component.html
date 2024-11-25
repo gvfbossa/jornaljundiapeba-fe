@@ -1,0 +1,9 @@
+<article class="news">
+  <!-- <img [src]="noticia.image" [alt]="noticia.headline" class="news__image" /> -->
+   <span class="news__image">I</span>
+  <div class="news__content">
+    <h3 class="news__headline">{{ noticia.headline }}</h3>
+    <p class="news__subtitle">{{ noticia.subtitle }}</p>
+    <p class="news__date">{{ noticia.date | date: 'dd/MM/yyyy' }}</p> <!-- Exibe a data -->
+  </div>
+</article>

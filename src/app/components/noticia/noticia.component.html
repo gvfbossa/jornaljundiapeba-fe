@@ -1,0 +1,24 @@
+<div class="noticia" *ngIf="noticia; else loading">
+  <!-- Imagem da notícia -->
+  <span class="noticia__image">I</span>
+
+  <!-- Textos da notícia (manchete, subtítulo e data) -->
+  <div class="noticia__text">
+    <h1 class="noticia__headline">{{ noticia.headline }}</h1>
+    <h2 class="noticia__subtitle">{{ noticia.subtitle }}</h2>
+    <p class="noticia__date">{{ noticia.date | date: 'dd/MM/yyyy' }}</p>
+  </div>
+
+  <div class="noticia__add">
+    <app-adds></app-adds>
+  </div>
+</div>
+
+<!-- Texto completo da notícia -->
+<div class="noticia__fulltext">
+  <p>{{ noticia.fulltext }}</p>
+</div>
+
+<ng-template #loading>
+  <p>Notícia não encontrada.</p>
+</ng-template>
