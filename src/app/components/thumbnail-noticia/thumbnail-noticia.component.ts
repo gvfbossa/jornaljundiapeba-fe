@@ -1,15 +1,17 @@
 import { Component, Input } from '@angular/core';
-import { DatePipe } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
+import { Noticia } from '../../noticia.model';
 
 @Component({
   selector: 'app-thumbnail-noticia',
   standalone: true,
   imports: [
-    DatePipe
+    DatePipe,
+    CommonModule
   ],
   templateUrl: './thumbnail-noticia.component.html',
   styleUrl: './thumbnail-noticia.component.css'
 })
 export class ThumbnailNoticiaComponent {
-  @Input() noticia: any;
+  @Input() noticia!: Noticia;
 }

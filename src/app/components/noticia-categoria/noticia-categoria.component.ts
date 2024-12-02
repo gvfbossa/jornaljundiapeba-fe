@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { ThumbnailDestaqueComponent } from "../thumbnail-destaque/thumbnail-destaque.component";
 import { ThumbnailNoticiaComponent } from "../thumbnail-noticia/thumbnail-noticia.component";
 import { AddsComponent } from "../adds/adds.component";  // Para navegação
+import { Noticia } from '../../noticia.model';
 
 @Component({
   selector: 'app-noticia-categoria',
@@ -22,7 +23,7 @@ import { AddsComponent } from "../adds/adds.component";  // Para navegação
 export class NoticiaCategoriaComponent implements OnInit {
 
   categoria: string = '';
-  noticiasFiltradas: any[] = [];
+  noticiasFiltradas: Noticia[] = [];
   categoriaFormatada: { [key: string]: string } = {
     geral: 'Geral',
     cultura: 'Cultura',
@@ -51,16 +52,21 @@ export class NoticiaCategoriaComponent implements OnInit {
   }
 
   filtrarNoticias(): void {
-    const todasNoticias = this.noticiaService.getNoticias();
-    this.noticiasFiltradas = todasNoticias.filter(noticia => noticia.category.toLowerCase() === this.categoria.toLowerCase());
+    this.noticiaService.getNoticias().subscribe(todasNoticias => {
+      this.noticiasFiltradas = todasNoticias.content.filter((noticia: { category: string; }) => {
+        return noticia.category === this.categoria.toUpperCase();
+      });
+    });
   }
-
-  goToNoticia(id: string): void {
-    // Navegando para a página da notícia, se clicado
-    this.router.navigate([`/noticia/${id}`]); // Altere para a rota correta de cada notícia
+  
+  goToNoticia(id: number): void {
+    let noticia = this.noticiasFiltradas.find((news: Noticia) => news.id === id);
+    if (noticia) {
+      this.router.navigate(['/noticia', id], { state: { noticia } });
+    }
   }
 
   getNomeCategoria(): string {
-    return this.categoriaFormatada[this.categoria.toLowerCase()] || this.categoria;
+    return this.categoriaFormatada[this.categoria] || this.categoria;
   }
 }

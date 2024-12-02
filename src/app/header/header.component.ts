@@ -37,7 +37,11 @@ export class HeaderComponent implements OnInit {
   
   ngOnInit(): void {
     this.updateDateTime();
-    this.noticias = this.noticiaService.getNoticias();
+    
+    this.noticiaService.getNoticias().subscribe(noticias => {
+
+      this.noticias = noticias.content;
+    });
   }
 
   navigateTo(route: any, toggle: boolean) {

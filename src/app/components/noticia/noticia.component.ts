@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DatePipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AddsComponent } from "../adds/adds.component";
+import { Noticia } from '../../noticia.model';
 
 @Component({
   selector: 'app-noticia',
@@ -20,7 +21,7 @@ import { AddsComponent } from "../adds/adds.component";
 
 export class NoticiaComponent implements OnInit {
 
-  noticia: any; // A notícia selecionada
+  noticia!: Noticia; // A notícia selecionada
   highlights: any[] = []; // Array de notícias de destaque
   commonNews: any[] = [];  // Array de notícias comuns
 

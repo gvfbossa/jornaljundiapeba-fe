@@ -1,6 +1,11 @@
 <div class="noticia" *ngIf="noticia; else loading">
   <!-- Imagem da notícia -->
-  <span class="noticia__image">I</span>
+  <div *ngIf="noticia.image && noticia.image.trim() !== ''; else semImagem">
+    <img [src]="noticia.image" [alt]="noticia.headline" class="noticia__image" />
+  </div>
+  <ng-template #semImagem>
+    <span class="noticia__image">I</span>
+  </ng-template>
 
   <!-- Textos da notícia (manchete, subtítulo e data) -->
   <div class="noticia__text">
@@ -16,7 +21,7 @@
 
 <!-- Texto completo da notícia -->
 <div class="noticia__fulltext">
-  <p>{{ noticia.fulltext }}</p>
+  <p>{{ noticia.fullText }}</p>
 </div>
 
 <ng-template #loading>

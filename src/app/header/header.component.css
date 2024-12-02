@@ -3,7 +3,11 @@
   width: 100%;
   top: 0;           /* Define o ponto em que ele fica fixo (topo da viewport) */
   z-index: 1000;    /* Garante que o header fique acima de outros elementos */
-  background-color: #000; /* Mantém o fundo preto */
+  background-color: #FFD700;
+  
+  background-color: #000;
+   /* VERIFICAR A COR A SER FIXADA */
+  background-color: white;
   color: #fff;
   padding: 20px;
   display: flex;
@@ -21,11 +25,12 @@
   .header__logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #FFD700; /* Amarelo (usado para o logo) */
+    color: #FFD700;
     display: flex;
   }
 
   .header__logo-image {
+    background-color: #FFD700;
     background-color: #fff;
     height: 70px;
     width: auto;
@@ -65,6 +70,8 @@
     margin-bottom: 10px; /* Espaçamento abaixo da data e hora */
     font-size: 1rem;
     color: #FFD700;
+    color: black;
+    color: #6c5c01;
   }
 
 /* Container da caixa de busca e ícone de lupa */
@@ -77,6 +84,8 @@
 .header__search {
     background-color: white; /* Forçar fundo branco com !important */
     color: black; /* Texto preto */
+    
+    border: 1px solid #6c5c01; /* Borda preta */
     border: 1px solid #000; /* Borda preta */
     padding: 5px;
     border-radius: 5px;
@@ -89,6 +98,8 @@
     cursor: pointer;
     font-size: 2rem;
     color: #FFD700; /* Cor amarela para o ícone */
+    color: black;
+    color: #6c5c01;
     margin-left: 10px; /* Espaço entre o ícone e a caixa de busca */
 }
 
@@ -155,6 +166,7 @@
   a {
     text-decoration: none;
     color: #FFD700;
+    color: black;
   }
 
   /* Ícone de menu hamburger */
@@ -162,9 +174,13 @@
     cursor: pointer;
     font-size: 2rem;
     color: #FFD700; /* Amarelo para o ícone */
+    color: black;
+    color: #6c5c01;
     margin-left: 10px; /* Espaço entre o ícone e o botão de busca */
   }
   
+
+
   /* Menu expandível */
 .header__hamburger-menu {
   position: absolute;
@@ -173,7 +189,7 @@
   background-color: #000; /* Preto para o fundo */
   color: #FFD700; /* Amarelo para o texto */
   width: 200px;
-  border: 1px solid #FFD700;
+  border: 1px solid #6c5c01;
   border-radius: 5px;
   padding-left: 10px;
   padding-right: 10px;

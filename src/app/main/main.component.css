@@ -41,7 +41,8 @@
 }
 
 /* Centralizar os conteúdos */
-.main__highlights, .main__common-news {
+.main__highlights,
+.main__common-news {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,13 +50,62 @@
 }
 
 /* Ajustando para 2 itens por linha nos Destaques */
-.main__highlight-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 colunas - Cada uma com 50% de largura */
-  gap: 20px;
-  width: 100%;
-  justify-content: center;
-  margin-bottom: 40px;
+.main__highlight-scroll {
+  display: flex;
+  gap: 16px; /* Ajuste no espaçamento entre os itens */
+  overflow-x: auto; /* Ativa o scroll horizontal */
+  scroll-snap-type: x mandatory; /* Faz o scroll "grudar" nos itens */
+  padding-bottom: 10px; /* Espaço abaixo para o scroll */
+  position: relative; /* Para que o filho possa se alinhar corretamente */
+}
+
+/* Barra de rolagem personalizada */
+.main__highlight-scroll::-webkit-scrollbar {
+  height: 8px; /* Altura da barra de rolagem */
+}
+
+.main__highlight-scroll::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Cor do scroll thumb */
+  border-radius: 4px;
+}
+
+.main__highlight-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #999; /* Cor ao passar o mouse */
+}
+
+/* Estilo do indicador de rolagem */
+.main__highlights-scroll-indicator {
+  position: absolute;
+  right: 10px; /* ajuste conforme necessário */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px; /* ajuste conforme necessário */
+  color: rgba(0, 0, 0, 0.5); /* cor sutil para não ser muito intrusivo */
+  cursor: pointer; /* Mostra que é clicável */
+  z-index: 9999;
+}
+
+.main__highlights-scroll-indicator:hover {
+  font-size: 45px;
+}
+
+/* Ajustes para os itens dos destaques */
+.main__highlight-items {
+  display: flex; /* Exibe os thumbnails em linha */
+}
+
+.main__highlight-items a {
+  margin-right: 20px; /* Espaço entre os itens */
+}
+
+.main__highlight-items a:last-child {
+  margin-right: 0; /* Remove o espaço do último item */
+}
+
+.main__highlight-scroll a {
+  flex: 0 0 49%; /* Cada item ocupa 49% da largura do container */
+  scroll-snap-align: center; /* Alinha cada item no centro ao parar o scroll */
+  box-sizing: border-box; /* Inclui padding e borda na largura */
 }
 
 /* Ajustando para 4 itens por linha nas Últimas Notícias */
@@ -67,11 +117,11 @@
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .main__highlight-grid {
-      grid-template-columns: 1fr; /* 1 coluna */
+  .main__highlight-scroll {
+    flex-direction: column; /* Coloca os itens em coluna para telas menores */
   }
 
   .main__news-grid {
-      grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
   }
 }

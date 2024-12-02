@@ -9,6 +9,7 @@ import { ThumbnailNoticiaComponent } from './components/thumbnail-noticia/thumbn
 import { SobreComponent } from './components/sobre/sobre.component';
 import { FooterComponent } from './footer/footer.component';
 import { routes } from './app.routes';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { routes } from './app.routes';
     FooterComponent
   ],
   exports: [RouterModule],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: []
 })
 export class AppModule { }

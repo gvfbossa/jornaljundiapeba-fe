@@ -1,0 +1,119 @@
+/* Garantir que o box-sizing seja aplicado a todos os elementos */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.cadastro-noticia-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 120px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+h1  {
+  text-align: center;
+}
+
+.cadastro-noticia-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Criação da estrutura flexível */
+.form-and-list {
+  display: flex; /* Usando Flexbox para organizar lado a lado */
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
+}
+
+.form-container {
+  flex: 1;
+  min-width: 300px; /* Garante que o formulário tenha uma largura mínima */
+}
+
+.news-list-container {
+  flex: 1;
+  overflow-y: auto;
+  padding-left: 100px;
+}
+
+.news-list-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.news-list-container li {
+  cursor: pointer;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.news-list-container li:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.news-list-container__date {
+  color: rgb(88, 88, 88);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Garantir que todos os campos e botões tenham a mesma largura */
+.form-group input,
+.form-group select,
+.form-group textarea,
+button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Garantir que os selects e textareas tenham o mesmo comportamento de largura */
+.form-group textarea {
+  height: 150px;  /* Isso ajuda a ajustar as alturas */
+}
+
+/* Ajuste específico para o botão */
+button {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px; /* Adiciona um espaçamento entre os botões */
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.clear {
+  margin-top: 10px;
+}
+
+.delete {
+  margin-top: 10px;
+  background-color: red;
+  color: white;
+}

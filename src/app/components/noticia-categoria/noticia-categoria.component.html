@@ -10,8 +10,8 @@
         <div class="noticia-categoria__thumbnails">
             <a *ngFor="let noticia of noticiasFiltradas" (click)="goToNoticia(noticia.id)">
                 <!-- Usando thumbnail diferente dependendo do tipo -->
-                <app-thumbnail-destaque *ngIf="noticia.type === 'highlight'" [noticia]="noticia"></app-thumbnail-destaque>
-                <app-thumbnail-noticia *ngIf="noticia.type === 'common'" [noticia]="noticia"></app-thumbnail-noticia>
+                <app-thumbnail-destaque *ngIf="noticia.type === 'HIGHLIGHT'" [noticia]="noticia"></app-thumbnail-destaque>
+                <app-thumbnail-noticia *ngIf="noticia.type === 'COMMON'" [noticia]="noticia"></app-thumbnail-noticia>
             </a>
         </div>
     </div>
