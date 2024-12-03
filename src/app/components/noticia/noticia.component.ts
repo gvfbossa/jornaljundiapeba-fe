@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { DatePipe } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { AddsComponent } from "../adds/adds.component";
-import { Noticia } from '../../noticia.model';
+import { Component, OnInit } from '@angular/core'
+import { ActivatedRoute } from '@angular/router'
+import { CommonModule } from '@angular/common'
+import { DatePipe } from '@angular/common'
+import { RouterModule } from '@angular/router'
+import { AddsComponent } from "../adds/adds.component"
+import { Noticia } from '../../noticia.model'
 
 @Component({
   selector: 'app-noticia',
@@ -21,41 +21,36 @@ import { Noticia } from '../../noticia.model';
 
 export class NoticiaComponent implements OnInit {
 
-  noticia!: Noticia; // A notícia selecionada
-  highlights: any[] = []; // Array de notícias de destaque
-  commonNews: any[] = [];  // Array de notícias comuns
+  noticia!: Noticia
+  highlights: any[] = []
+  commonNews: any[] = []
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    // Tentando acessar o estado diretamente
-    this.noticia = history.state?.noticia;
+    this.noticia = history.state?.noticia
 
     if (!this.noticia) {
-      console.error("Notícia não encontrada no estado");
+      console.error("Notícia não encontrada no estado")
       
-      // Caso a notícia não venha pelo estado, tentamos pegar pelo ID da rota
-      const id = this.route.snapshot.paramMap.get('id');
+      const id = this.route.snapshot.paramMap.get('id')
       if (id) {
-        this.noticia = this.findNoticiaById(id);
-        console.log("Notícia encontrada pela ID da rota: ", this.noticia);
+        this.noticia = this.findNoticiaById(id)
+        console.log("Notícia encontrada pela ID da rota: ", this.noticia)
       }
     }
 
-    // Verifique se encontrou a notícia
     if (!this.noticia) {
-      console.error("Notícia não encontrada!");
+      console.error("Notícia não encontrada!")
     }
   }
 
-  // Função para procurar a notícia pelo id
   findNoticiaById(id: string | null): any {
     if (id) {
-      console.log('Buscando notícia pelo ID:', id);
-      // Aqui, você pode buscar nas suas listas de notícias
+      console.log('Buscando notícia pelo ID:', id)
       return [...this.highlights, ...this.commonNews]
-        .find(noticia => noticia.id.toString() === id);
+        .find(noticia => noticia.id.toString() === id)
     }
-    return null;
+    return null
   }
 }

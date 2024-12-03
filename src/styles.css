@@ -13,15 +13,15 @@ html, body {
   app-root {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Altura mínima igual à altura da tela */
+    min-height: 100vh;
   }
   
   router-outlet {
-    flex: 1; /* Permite que o router-outlet ocupe o espaço necessário */
+    flex: 1;
     display: block
   }
   
   .page-content {
-    margin-top: 0; /* Caso o header ocupe espaço, evite margem desnecessária */
-    margin-bottom: auto; /* Garante que o espaço abaixo cresça proporcionalmente */
+    margin-top: 0;
+    margin-bottom: auto;
   }

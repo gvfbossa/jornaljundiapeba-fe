@@ -1,32 +1,32 @@
 .sobre {
-    margin-top: 200px;
+    margin-top: 15rem;
 }
 
 .sobre__content {
     display: flex;
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    align-items: center; /* Alinha o conteúdo no meio verticalmente */
-    gap: 100px; /* Espaço entre o bloco central e a imagem */
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
 }
 
 .sobre__main {
-    text-align: center; /* Centraliza o texto e as imagens no bloco principal */
+    text-align: center;
 }
 
 .sobre__logo {
     display: flex;
-    justify-content: flex-start; /* Centraliza as imagens dentro do bloco */
+    justify-content: flex-start;
     align-items: center;
-    gap: 30px; /* Espaçamento entre as logos */
+    gap: 3rem;
 }
 
 .sobre__logo-image {
-    height: 150px;
+    height: 10rem;
     width: auto;
 }
 
 .sobre__texto {
-    margin-top: 20px;
+    margin-top: 2rem;
     font-size: 1.3rem;
     font-weight: bold;
     line-height: 1.6;
@@ -36,13 +36,14 @@
 }
 
 .sobre__ad-image {
-    width: 450px;
-    height: auto; /* Mantém a proporção da imagem */
-    flex-shrink: 0; /* Garante que a imagem não diminua */
-    margin-left: 80px; /* Aumenta o espaçamento para a direita */
+    width: 30rem;
+    height: auto;
+    flex-shrink: 0;
+    margin-left: 8rem;
 }
 
 .sobre__adds {
-    margin-top: 20px; /* Espaçamento acima do app-adds */
-    text-align: center; /* Centraliza o app-adds */
+    margin-top: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
 }

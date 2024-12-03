@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { AddsComponent } from "../adds/adds.component";
+import { Component } from '@angular/core'
+import { AddsComponent } from "../adds/adds.component"
 
 @Component({
   selector: 'app-sobre',

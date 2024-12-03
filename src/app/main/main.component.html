@@ -1,6 +1,6 @@
 <app-adds class="main__add"></app-adds>
 <main class="main">
-  <!-- SEÇÃO DE DESTAQUES -->
+
   <section class="main__highlights">
     <div class="main__section-title-container">
         <h2 class="main__section-title">Destaques</h2>
@@ -8,7 +8,7 @@
     <div class="main__highlight-scroll" #highlightScroll>
       <div class="main__highlights-scroll-indicator" 
           [style.left]="indicatorPosition + 'px'"
-          (click)="scrollRight()"> <!-- Adicionando o evento de clique -->
+          (click)="scrollRight()">
         <i class="fa fa-chevron-right"></i>
       </div>
         <div class="main__highlight-items">
@@ -25,7 +25,6 @@
     <app-adds></app-adds>
   </div>
   
-  <!-- SEÇÃO DE NOTÍCIAS COMUNS -->
   <section class="main__common-news">
     <div class="main__section-title-container">
       <h2 class="main__section-title">Últimas Notícias</h2>

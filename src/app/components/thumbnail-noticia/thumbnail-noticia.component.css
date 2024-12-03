@@ -1,55 +1,51 @@
-/* Estilo geral das notícias */
 .news {
     display: flex;
-    flex-direction: column; /* Layout em coluna: imagem em cima, texto embaixo */
-    align-items: center; /* Centraliza horizontalmente */
+    flex-direction: column;
+    align-items: center;
     background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border: 0.1rem solid #ddd;
+    border-radius: 0.5rem;
     overflow: hidden;
     transition: transform 0.3s;
     cursor: pointer;
-    width: 98%; /* Ocupa o espaço da célula da grid */
-    padding: 10px; /* Espaçamento interno */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
-    max-height: 400px;
+    width: 98%;
+    padding: 0.6rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+    max-height: 25rem;
+    min-height: 25rem;
 }
 
 .news:hover {
     transform: scale(1.025);
 }
 
-/* Imagem */
 .news__image {
-    width: 100%; /* Largura total do card */
-    max-width: 250px; /* Limita o tamanho máximo da imagem */
-    height: auto; /* Mantém proporção */
-    aspect-ratio: 1 / 1; /* Garante que seja sempre quadrada */
-    background-color: #e0e0e0; /* Fundo cinza para simular a imagem */
+    width: 100%;
+    max-width: 15rem;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    background-color: #e0e0e0;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem; /* Tamanho do "I" */
+    font-size: 2rem;
     font-weight: bold;
     color: #000;
-    border-radius: 4px; /* Borda arredondada */
-    margin-bottom: 10px; /* Espaço entre a imagem e o conteúdo */
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
 }
 
-/* Conteúdo */
 .news__content {
-    text-align: center; /* Centraliza os textos no card */
+    text-align: center;
 }
 
-/* Manchete */
 .news__headline {
     font-size: 1.2rem;
     font-weight: bold;
     color: #000;
-    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
 }
 
-/* Subtítulo */
 .news__subtitle {
     font-size: 1rem;
     color: #666;
@@ -60,5 +56,5 @@
 .news__date {
     font-size: 0.9rem;
     color: #999;
-    margin-top: 10px; /* Espaço superior */
+    margin-top: 10px;
 }

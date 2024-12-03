@@ -1,4 +1,3 @@
-<!-- header.component.html -->
 <header class="header">
     <div class="header__logo-and-socialmedia">
         <div class="header__logo">
@@ -22,7 +21,6 @@
             {{ currentDateTime }}
         </div>
         <div class="header__search-container">
-            <!-- Caixa de busca -->
             <input
                 id="search-box"
                 class="header__search"
@@ -31,15 +29,12 @@
                 [(ngModel)]="searchQuery"
                 (input)="filterNoticias()"
             />
-            <!-- Dropdown dinâmico de resultados -->
             <ul *ngIf="filteredNoticias.length > 0" class="header__dropdown">
                 <li *ngFor="let noticia of filteredNoticias" class="header__dropdown-item" (click)="navigateToNoticia(noticia)">
                 {{ noticia.headline }}
                 </li>
             </ul>
-            <!-- Ícone de lupa fixado à direita -->
             <span class="material-icons" (click)="filterNoticias()">search</span>
-            <!-- Ícone Hamburger menu -->
             <span class="material-icons header__menu-icon" (click)="toggleMenu()">menu</span>
 
             <nav class="header__hamburger-menu" *ngIf="isMenuOpen">

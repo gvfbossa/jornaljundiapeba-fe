@@ -5,34 +5,33 @@
     justify-content: flex-start;
     width: 100%;
     text-align: left;
-    padding: 20px;
+    padding: 2rem;
 }
 
 .grafica__container {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
 }
 
 .grafica__title {
     font-size: 1.8rem;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
     color: #000;
-    border-left: 5px solid #FFD700;
-    padding-left: 10px;
+    border-left: 0.4rem solid #FFD700;
+    padding-left: 1rem;
     text-align: left;
 }
 
 .grafica__images-container {
     position: relative;
-    width: 600px; /* Ajuste do tamanho */
-    height: 500px; /* Ajuste do tamanho */
+    width: 42rem;
+    height: 35rem;
     overflow: hidden;
     display: flex;
     justify-content: flex-start;
 }
 
-/* Imagens com transição rápida */
 .grafica__image {
     position: absolute;
     top: 0;
@@ -40,25 +39,23 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0; /* Começa invisível */
-    transition: opacity 1s ease-in-out; /* Transição de 500ms */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
-/* Atraso para cada imagem */
 .grafica__image:nth-child(1) {
-    animation: changeImage 5s infinite; /* Ciclo de 5s para a primeira imagem */
+    animation: changeImage 5s infinite;
 }
 
 .grafica__image:nth-child(2) {
-    animation: changeImage 5s infinite 2.5s; /* Ciclo de 5s para a segunda imagem */
+    animation: changeImage 5s infinite 2.5s;
 }
 
-/* Animação para mudar as imagens de forma suave */
 @keyframes changeImage {
     0%, 50% {
-        opacity: 1; /* A imagem aparece completamente */
+        opacity: 1;
     }
     51%, 100% {
-        opacity: 0; /* A imagem desaparece rapidamente */
+        opacity: 0;
     }
 }

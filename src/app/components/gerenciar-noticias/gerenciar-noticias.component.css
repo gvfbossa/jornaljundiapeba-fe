@@ -1,4 +1,3 @@
-/* Garantir que o box-sizing seja aplicado a todos os elementos */
 *,
 *::before,
 *::after {
@@ -6,41 +5,40 @@
 }
 
 .cadastro-noticia-container {
-  max-width: 1000px;
+  max-width: 100rem;
   margin: 0 auto;
-  margin-top: 120px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  margin-top: 12rem;
+  padding: 2rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.8rem;
   background-color: #f9f9f9;
 }
 
-h1  {
+h1 {
   text-align: center;
 }
 
 .cadastro-noticia-container h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
-/* Criação da estrutura flexível */
 .form-and-list {
-  display: flex; /* Usando Flexbox para organizar lado a lado */
+  display: flex;
   justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .form-container {
   flex: 1;
-  min-width: 300px; /* Garante que o formulário tenha uma largura mínima */
+  min-width: 30rem;
 }
 
 .news-list-container {
   flex: 1;
   overflow-y: auto;
-  padding-left: 100px;
+  padding-left: 10rem;
 }
 
 .news-list-container ul {
@@ -50,10 +48,10 @@ h1  {
 
 .news-list-container li {
   cursor: pointer;
-  margin: 10px 0;
-  padding: 10px;
+  margin: 1rem 0;
+  padding: 1rem;
   background-color: #f1f1f1;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   transition: background-color 0.3s;
 }
 
@@ -67,40 +65,37 @@ h1  {
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 
 .form-group label {
   display: block;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
 }
 
-/* Garantir que todos os campos e botões tenham a mesma largura */
 .form-group input,
 .form-group select,
 .form-group textarea,
 button {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 1rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.4rem;
 }
 
-/* Garantir que os selects e textareas tenham o mesmo comportamento de largura */
 .form-group textarea {
-  height: 150px;  /* Isso ajuda a ajustar as alturas */
+  height: 10rem;
 }
 
-/* Ajuste específico para o botão */
 button {
-  padding: 12px;
+  padding: 1rem;
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 0.5rem;
   cursor: pointer;
-  margin-top: 10px; /* Adiciona um espaçamento entre os botões */
+  margin-top: 1rem;
 }
 
 button:disabled {
@@ -109,11 +104,11 @@ button:disabled {
 }
 
 .clear {
-  margin-top: 10px;
+  margin-top: 1rem;
 }
 
 .delete {
-  margin-top: 10px;
+  margin-top: 1rem;
   background-color: red;
   color: white;
 }

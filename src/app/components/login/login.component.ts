@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { AuthService } from '../../services/auth.service';
+import { Component } from '@angular/core'
+import { Router } from '@angular/router'
+import { FormsModule } from '@angular/forms'
+import { CommonModule } from '@angular/common'
+import { AuthService } from '../../services/auth.service'
 
 @Component({
   selector: 'app-login',
@@ -16,32 +16,32 @@ import { AuthService } from '../../services/auth.service';
 })
 
 export class LoginComponent {
-  username: string = '';
-  password: string = '';
-  isSubmitting = false;
-  errorMessage: string = '';
+  username: string = ''
+  password: string = ''
+  isSubmitting = false
+  errorMessage: string = ''
 
   constructor(private authService: AuthService, private router: Router) {}
 
   onLogin(): void {
-    this.isSubmitting = true;
-    this.errorMessage = '';
+    this.isSubmitting = true
+    this.errorMessage = ''
 
     const body = {
       username: this.username,
       password: this.password
-    };
+    }
 
     // Chama o método de login do AuthService para gerenciar a autenticação
     this.authService.login(body).subscribe(
       () => {
         // Redireciona para a página de gerenciamento de notícias
-        this.router.navigate(['/gerenciar-noticias']);
+        this.router.navigate(['/gerenciar-noticias'])
       },
       (error) => {
-        this.errorMessage = error.status === 403 ? 'Usuário ou senha inválidos.' : 'Erro desconhecido.';
-        this.isSubmitting = false;
+        this.errorMessage = error.status === 403 ? 'Usuário ou senha inválidos.' : 'Erro desconhecido.'
+        this.isSubmitting = false
       }
-    );
+    )
   }
 }

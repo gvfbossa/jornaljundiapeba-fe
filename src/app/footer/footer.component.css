@@ -4,7 +4,7 @@
     background-color: black;
     width: 100%;
     font-size: 1rem;
-    color: #FFD700; /* Amarelo (usado para o logo) */
+    color: #FFD700;
 }
 
 .footer__container {
@@ -17,10 +17,10 @@
 .footer__jj,
 .footer__bws {
     font-weight: bold;
-    padding: 5px;
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    margin: 1.5rem;
 }
 
 .footer__bws a {

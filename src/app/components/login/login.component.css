@@ -1,32 +1,33 @@
 .login-container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-top: 200px;
+    max-width: 30rem;
+    margin: 5rem auto;
+    padding: 2rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+    margin-top: 12rem;
   }
   
   .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
   }
   
   input {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.3rem;
   }
   
   button {
-    width: 100%;
-    padding: 10px;
+    margin-top: 1rem;
+    width: 31.1rem;
+    padding: 0.7rem;
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 0.3rem;
     cursor: pointer;
   }
   
@@ -37,6 +38,6 @@
   
   .error {
     color: red;
-    margin-top: 10px;
+    margin-top: 1rem;
   }
   

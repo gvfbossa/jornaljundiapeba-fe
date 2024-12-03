@@ -1,117 +1,116 @@
 .header {
-  position: fixed; /* Faz o header ficar "grudado" no topo ao rolar */
+  position: fixed;
   width: 100%;
-  top: 0;           /* Define o ponto em que ele fica fixo (topo da viewport) */
-  z-index: 1000;    /* Garante que o header fique acima de outros elementos */
+  top: 0;
+  z-index: 1000;
+
   background-color: #FFD700;
-  
   background-color: #000;
-   /* VERIFICAR A COR A SER FIXADA */
   background-color: white;
+
   color: #fff;
-  padding: 20px;
+  padding: 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra para destaque */
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
 }
 
-  .header__logo-and-socialmedia {
-    display: block;
-    cursor: pointer;
-    width: 15%;
-  }
-  
-  .header__logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #FFD700;
-    display: flex;
-  }
+.header__logo-and-socialmedia {
+  display: block;
+  cursor: pointer;
+  width: 15%;
+}
 
-  .header__logo-image {
-    background-color: #FFD700;
-    background-color: #fff;
-    height: 70px;
-    width: auto;
-  }
+.header__logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FFD700;
+  display: flex;
+}
 
-  .header__social-icons {
-    display: flex;
-    justify-content: space-between;
-    width: 100%; 
-  }
+.header__logo-image {
+  background-color: #FFD700;
+  background-color: #fff;
 
-  .header__social-icons-x {
-    width: 20px; /* Tamanho do ícone */
-    height: 20px;
-    fill: #FFD700;
-    transition: fill 0.1s ease;
-  }
+  height: 5rem;
+  width: auto;
+}
 
-  .header__social-icons a:hover .header__social-icons-x {
-    fill: gray; /* Cor cinza no hover */
-  }
+.header__social-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 
-  .header__social-icons a {
-    margin-top: 20px;
-    color: #FFD700;
-    justify-content: space-between;
-    font-size: 20px;
-  }
+.header__social-icons a:hover .header__social-icons-x {
+  fill: gray;
+}
 
-  .header__date-and-search {
-    display: block;
-    margin-right: 40px;
-    width: 16%;
-  }
+.header__social-icons a {
+  margin-top: 1rem;
+  color: #FFD700;
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
 
-  .header__datetime {
-    margin-bottom: 10px; /* Espaçamento abaixo da data e hora */
-    font-size: 1rem;
-    color: #FFD700;
-    color: black;
-    color: #6c5c01;
-  }
+.header__date-and-search {
+  display: block;
+  margin-right: 2.5rem;
+  width: 16%;
+}
 
-/* Container da caixa de busca e ícone de lupa */
+.header__datetime {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+
+  color: #FFD700;
+  color: black;
+  color: #6c5c01;
+}
+
 .header__search-container {
-    display: flex;
-    align-items: center;
-    position: relative;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .header__search {
-    background-color: white; /* Forçar fundo branco com !important */
-    color: black; /* Texto preto */
-    
-    border: 1px solid #6c5c01; /* Borda preta */
-    border: 1px solid #000; /* Borda preta */
-    padding: 5px;
-    border-radius: 5px;
-    width: 100%;
-    height: 30px;
+  background-color: white;
+  color: black;
+
+  border: 0.1rem solid #6c5c01;
+  border: 0.1rem solid #000;
+
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  width: 100%;
+  height: 1.8rem;
 }
 
-/* Ícone de lupa fixo à direita */
 .material-icons {
-    cursor: pointer;
-    font-size: 2rem;
-    color: #FFD700; /* Cor amarela para o ícone */
-    color: black;
-    color: #6c5c01;
-    margin-left: 10px; /* Espaço entre o ícone e a caixa de busca */
+  cursor: pointer;
+  font-size: 2rem;
+
+  color: #FFD700;
+  color: black;
+  color: #6c5c01;
+
+  margin-left: 0.5rem;
 }
 
 .header__dropdown {
   position: absolute;
   top: 100%;
   left: 0;
+
   background: white;
-  border: 1px solid #ccc;
+  border: 0.1rem solid #ccc;
+
   width: 100%;
-  max-height: 200px;
+  max-height: 18rem;
   overflow-y: auto;
+
   z-index: 1000;
   list-style: none;
   padding: 0;
@@ -122,77 +121,79 @@
   color: black;
   padding: 10px;
   cursor: pointer;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 0.1rem solid #f0f0f0;
 }
 
 .header__dropdown-item:hover {
   background: #f9f9f9;
 }
 
-  .header__categories {
-    display: flex;
-    justify-content: space-between; /* Distribui as categorias com espaçamento igual entre elas */
-    width: 50%; /* Garante que as categorias ocupem toda a largura disponível */
-    
+.header__categories {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
 }
 
 .header__categories ul {
-    display: flex;
-    justify-content: space-between; /* Faz os itens da lista se distribuírem igualmente */
-    padding: 0;
-    margin: 0;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
 
 .header__categories li {
-    list-style-type: none;
-    color: #FFD700; /* Amarelo para as categorias */
-    font-size: 1.1rem;
-    cursor: pointer;
-    text-decoration: none;
+  list-style-type: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-decoration: none;
+
+  color: #FFD700;
 }
 
-  
-  .header__category {
-    color: #FFD700; /* Amarelo para as categorias */
-    font-size: 1.1rem;
-    cursor: pointer;
-  }
+.header__category {
+  font-size: 1.1rem;
+  cursor: pointer;
 
-  .header__category-link:hover {
-    color: gray;
-  }
+  color: #FFD700;
+}
 
-  a {
-    text-decoration: none;
-    color: #FFD700;
-    color: black;
-  }
+.header__category-link:hover {
+  color: gray;
+}
 
-  /* Ícone de menu hamburger */
-  .header__menu-icon {
-    cursor: pointer;
-    font-size: 2rem;
-    color: #FFD700; /* Amarelo para o ícone */
-    color: black;
-    color: #6c5c01;
-    margin-left: 10px; /* Espaço entre o ícone e o botão de busca */
-  }
-  
+a {
+  text-decoration: none;
 
+  color: #FFD700;
+  color: black;
+}
 
-  /* Menu expandível */
+.header__menu-icon {
+  cursor: pointer;
+  font-size: 2rem;
+
+  color: #FFD700;
+  color: black;
+  color: #6c5c01;
+
+  margin-left: 1rem;
+}
+
 .header__hamburger-menu {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: #000; /* Preto para o fundo */
-  color: #FFD700; /* Amarelo para o texto */
-  width: 200px;
+
+  background-color: #000;
+  color: #FFD700;
+
+  width: 12rem;
   border: 1px solid #6c5c01;
-  border-radius: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  border-radius: 0.5rem;
+
+  padding-left: 1rem;
+  padding-right: 1rem;
   z-index: 10;
 }
 
@@ -203,13 +204,14 @@
 }
 
 .header__hamburger-menu li {
-  padding: 10px 0;
+  padding: 0.7rem 0;
   text-align: center;
 }
 
 .header__hamburger-menu a {
   cursor: pointer;
   text-decoration: none;
+
   color: #FFD700;
 }
 
@@ -217,12 +219,9 @@
   color: gray;
 }
 
-
-  /* SEÇÃO: Responsividade */
-  @media (max-width: 768px) {
-    .header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
+}
