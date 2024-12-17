@@ -5,18 +5,20 @@
     <div class="main__section-title-container">
         <h2 class="main__section-title">Destaques</h2>
     </div>
-    <div class="main__highlight-scroll" #highlightScroll>
-      <div class="main__highlights-scroll-indicator" 
-          [style.left]="indicatorPosition + 'px'"
-          (click)="scrollRight()">
-        <i class="fa fa-chevron-right"></i>
+    <div class="main__highlights">
+      <div class="main__carousel">
+          <div class="main__carousel-container">
+              <app-thumbnail-destaque
+                  *ngFor="let news of highlights"
+                  [noticia]="news"
+                  class="main__carousel-item"
+                  (click)="goToNoticia(news.id)"> 
+              </app-thumbnail-destaque>
+          </div>
+          <button class="main__carousel-btn main__carousel-btn--prev" (click)="prevSlide()">&#10094;</button>
+          <button class="main__carousel-btn main__carousel-btn--next" (click)="nextSlide()">&#10095;</button>
       </div>
-        <div class="main__highlight-items">
-            <a *ngFor="let news of highlights" (click)="goToNoticia(news.id)">
-                <app-thumbnail-destaque [noticia]="news"></app-thumbnail-destaque>
-            </a>
-        </div>
-    </div>
+  </div>
 </section>
 
 

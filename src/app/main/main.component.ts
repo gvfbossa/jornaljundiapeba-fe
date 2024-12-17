@@ -28,6 +28,8 @@ export class MainComponent implements OnInit {
 
   highlights: Noticia[] = []
   commonNews: Noticia[] = []
+  currentSlide = 0;
+  interval: any;
 
   @ViewChild('highlightScroll', { static: true }) highlightScroll!: ElementRef
   indicatorPosition = 0
@@ -53,31 +55,36 @@ export class MainComponent implements OnInit {
         console.error('Erro ao buscar notícias:', err)
       },
     })
-    
-    setTimeout(() => {
-      this.highlightScroll.nativeElement.scrollLeft = 1
-      this.updateIndicatorPosition()
-    }, 0)
 
-    this.highlightScroll.nativeElement.addEventListener('scroll', () => {
-      this.updateIndicatorPosition()
-    })
+    this.startAutoSlide();
   }
 
-  updateIndicatorPosition() {
-    const scrollContainer = this.highlightScroll.nativeElement
-    this.indicatorPosition = scrollContainer.scrollLeft + scrollContainer.clientWidth - 40
+  nextSlide() {
+    this.currentSlide = (this.currentSlide + 1) % this.highlights.length;
+    this.updateCarousel();
   }
 
-  scrollRight() {
-    const scrollContainer = this.highlightScroll.nativeElement
-    scrollContainer.scrollBy({
-        left: 1000,
-        behavior: 'smooth'
-    }) 
+  prevSlide() {
+    this.currentSlide = (this.currentSlide - 1 + this.highlights.length) % this.highlights.length;
+    this.updateCarousel();
   }
 
+  updateCarousel() {
+    const container = document.querySelector('.main__carousel-container') as HTMLElement;
+    const items = container.children;
+    const currentItem = items[this.currentSlide] as HTMLElement;
 
+    const itemWidth = currentItem.getBoundingClientRect().width;
+
+    const offset = -(this.currentSlide * itemWidth);
+    container.style.transform = `translateX(${offset}px)`;
+  }
+
+  startAutoSlide() {
+    this.interval = setInterval(() => {
+      this.nextSlide();
+    }, 5000);
+  }
 
   goToNoticia(id: number): void {
     let noticia = this.highlights.concat(this.commonNews).find((news: Noticia) => news.id === id)

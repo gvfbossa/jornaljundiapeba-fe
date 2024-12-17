@@ -3,11 +3,7 @@
   width: 100%;
   top: 0;
   z-index: 1000;
-
-  background-color: #FFD700;
-  background-color: #000;
   background-color: white;
-
   color: #fff;
   padding: 1.5rem;
   display: flex;
@@ -30,9 +26,7 @@
 }
 
 .header__logo-image {
-  background-color: #FFD700;
   background-color: #fff;
-
   height: 5rem;
   width: auto;
 }
@@ -63,9 +57,6 @@
 .header__datetime {
   margin-bottom: 0.5rem;
   font-size: 1rem;
-
-  color: #FFD700;
-  color: black;
   color: #6c5c01;
 }
 
@@ -78,10 +69,7 @@
 .header__search {
   background-color: white;
   color: black;
-
-  border: 0.1rem solid #6c5c01;
   border: 0.1rem solid #000;
-
   padding: 0.3rem;
   border-radius: 0.3rem;
   width: 100%;
@@ -91,11 +79,7 @@
 .material-icons {
   cursor: pointer;
   font-size: 2rem;
-
-  color: #FFD700;
-  color: black;
   color: #6c5c01;
-
   margin-left: 0.5rem;
 }
 
@@ -103,14 +87,11 @@
   position: absolute;
   top: 100%;
   left: 0;
-
   background: white;
   border: 0.1rem solid #ccc;
-
   width: 100%;
   max-height: 18rem;
   overflow-y: auto;
-
   z-index: 1000;
   list-style: none;
   padding: 0;
@@ -147,36 +128,63 @@
   font-size: 1.1rem;
   cursor: pointer;
   text-decoration: none;
-
   color: #FFD700;
 }
 
 .header__category {
   font-size: 1.1rem;
   cursor: pointer;
-
+  position: relative;
   color: #FFD700;
 }
 
+.header__category-pipe {
+  color: #6c5c01;
+}
+
 .header__category-link:hover {
-  color: gray;
+  color: #6c5c01;
 }
 
 a {
   text-decoration: none;
-
-  color: #FFD700;
   color: black;
+}
+
+.header__subcategory-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  opacity: 0;
+}
+
+.header__subcategory-item {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.header__subcategory-link:hover {
+  color: #6c5c01;
+}
+
+.header__category:hover .header__subcategory-list {
+  display: block;
+  opacity: 1;
 }
 
 .header__menu-icon {
   cursor: pointer;
   font-size: 2rem;
-
-  color: #FFD700;
-  color: black;
   color: #6c5c01;
-
   margin-left: 1rem;
 }
 
@@ -185,8 +193,8 @@ a {
   top: 100%;
   right: 0;
 
-  background-color: #000;
-  color: #FFD700;
+  background-color: white;
+  color: #6c5c01;
 
   width: 12rem;
   border: 1px solid #6c5c01;
@@ -212,7 +220,7 @@ a {
   cursor: pointer;
   text-decoration: none;
 
-  color: #FFD700;
+  color: #6c5c01;
 }
 
 .header__hamburger-menu a:hover {

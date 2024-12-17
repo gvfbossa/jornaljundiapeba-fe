@@ -1,10 +1,11 @@
 .footer {
     bottom: 0;
     display: flex;
-    background-color: black;
+    background-color: white;
     width: 100%;
     font-size: 1rem;
-    color: #FFD700;
+    color: #6c5c01;
+    box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.4);
 }
 
 .footer__container {
@@ -25,5 +26,10 @@
 
 .footer__bws a {
     text-decoration: none;
-    color: aliceblue
+    color: #0052cc;
+}
+
+.footer__jj a {
+    text-decoration: none;
+    color: #6c5c01;
 }

@@ -15,7 +15,6 @@ import { NoticiaService } from '../services/noticia.service'
   styleUrl: './header.component.css'
 })
 export class HeaderComponent implements OnInit {
-
   constructor(private router: Router, private noticiaService: NoticiaService) {}
 
   isMenuOpen = false
@@ -26,14 +25,29 @@ export class HeaderComponent implements OnInit {
   filteredNoticias: any[] = []
   noticias: any[] = []
 
-  categories: { name: string; route: string }[] = [
-    { name: 'NOTÍCIAS', route: '' },
-    { name: 'AGENDA', route: 'noticia-categoria/agenda' },
-    { name: 'EMPREGO', route: 'noticia-categoria/emprego' },
-    { name: 'ACHADOS E PERDIDOS', route: 'noticia-categoria/achadosperdidos' },
-    { name: 'ANÚNCIOS', route: 'noticia-categoria/anuncios' },
-    { name: 'RECLAMAÇÕES', route: 'noticia-categoria/reclamacoes' },
+  categories: { 
+    name: string; 
+    route: string; 
+    subcategories?: { name: string; route: string }[] 
+  }[] = [
+    { 
+      name: 'NOTÍCIAS', 
+      route: '', 
+      subcategories: [
+        { name: 'Geral', route: 'noticia-categoria/geral' },
+        { name: 'Política', route: 'noticia-categoria/politica' },
+        { name: 'Policial', route: 'noticia-categoria/policial' },
+        { name: 'Esportes', route: 'noticia-categoria/esportes' },
+        { name: 'Cultura', route: 'noticia-categoria/cultura' },
+      ]
+    },
+    { name: 'AGENDA', route: 'noticia-categoria/agenda'},
+    { name: 'EMPREGO', route: 'noticia-categoria/emprego'},
+    { name: 'ACHADOS E PERDIDOS', route: 'noticia-categoria/achadosperdidos'},
+    { name: 'PRODUTOS E SERVIÇOS', route: 'noticia-categoria/anuncios'},
+    { name: 'RECLAMAÇÕES', route: 'noticia-categoria/reclamacoes'},
   ]
+  
   
   ngOnInit(): void {
     this.updateDateTime()
@@ -68,6 +82,10 @@ export class HeaderComponent implements OnInit {
       this.filteredNoticias = []
     }
   }
+
+  focusOnSearch() {
+    document.getElementById('search-box')?.focus()
+  }    
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen
